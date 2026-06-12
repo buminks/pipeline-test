@@ -13,9 +13,11 @@ pipeline {
                     echo "${foo} -- ${foo.class.name}"
 
                     def foo1 = foo.create(this)
+                    foo1.setName("Foo1")
                     foo1.sayHello()
 
                     def foo2 = foo.create(this)
+                    foo2.setName("Foo2")
                     foo2.sayHello()
 
                     // utils.sayHello()

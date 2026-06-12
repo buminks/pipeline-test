@@ -2,12 +2,18 @@ class Utils implements Serializable {
 
     def steps
 
+    static String name = "Utils"
+
+    static setName(name) {
+        this.name = name
+    }
+
     Utils(steps) {
         this.steps = steps
     }
 
     void sayHello() {
-        steps.echo("Hallo")
+        steps.echo("Hallo ${name}")
     }
 }
 
