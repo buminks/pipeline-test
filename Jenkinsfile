@@ -5,11 +5,11 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def Utils = load 'src/de/firma/Utils.groovy'
-                    def DockerUtils = load 'src/de/firma/DockerUtils.groovy'
+                    def utilsClass = load 'src/de/firma/Utils.groovy'
+                    def dockerUtilsClass = load 'src/de/firma/DockerUtils.groovy'
 
-                    def utils = new Utils(this)
-                    def dockerUtils = new DockerUtils(this)
+                    def utils = utilsClass.newInstance(this)
+                    def dockerUtils = dockerUtilsClass.newInstance(this)
 
                     utils.sayHello()
                     dockerUtils.buildImage()
