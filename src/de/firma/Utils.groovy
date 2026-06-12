@@ -1,14 +1,9 @@
-class Utils implements Serializable {
-
-    def steps
-
-    Utils(steps) {
-        this.steps = steps
-    }
-
-    void sayHello() {
-        steps.echo("Hallo")
-    }
+def create(steps) {
+    return [
+        sayHello: { ->
+            steps.echo("Hallo")
+        }
+    ]
 }
 
-return Utils
+return this

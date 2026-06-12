@@ -1,14 +1,9 @@
-class DockerUtils implements Serializable {
-
-    def steps
-
-    DockerUtils(steps) {
-        this.steps = steps
-    }
-
-    void buildImage() {
-        steps.echo("Docker Image bauen")
-    }
+def create(steps) {
+    return [
+        buildImage: { ->
+            steps.echo("Docker Image bauen")
+        }
+    ]
 }
 
-return DockerUtils
+return this
