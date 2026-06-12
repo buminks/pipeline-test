@@ -1,5 +1,3 @@
-package de.firma
-
 class DockerUtils implements Serializable {
 
     def steps
@@ -12,3 +10,5 @@ class DockerUtils implements Serializable {
         steps.echo("Docker Image bauen")
     }
 }
+
+return DockerUtils

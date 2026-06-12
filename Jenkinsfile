@@ -1,6 +1,3 @@
-import de.firma.Utils
-import de.firma.DockerUtils
-
 pipeline {
     agent any
 
@@ -8,6 +5,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    def Utils = load 'src/de/firma/Utils.groovy'
+                    def DockerUtils = load 'src/de/firma/DockerUtils.groovy'
+
                     def utils = new Utils(this)
                     def dockerUtils = new DockerUtils(this)
 

@@ -1,5 +1,3 @@
-package de.firma
-
 class Utils implements Serializable {
 
     def steps
@@ -12,3 +10,5 @@ class Utils implements Serializable {
         steps.echo("Hallo")
     }
 }
+
+return Utils
