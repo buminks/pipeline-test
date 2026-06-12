@@ -12,6 +12,12 @@ pipeline {
 
                     echo "${foo} -- ${foo.class.name}"
 
+                    def foo1 = foo.create(this)
+                    foo1.sayHello()
+
+                    def foo2 = foo.create(this)
+                    foo2.sayHello()
+
                     // utils.sayHello()
                     dockerUtils.buildImage()
                 }
