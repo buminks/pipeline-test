@@ -1,14 +1,14 @@
 pipeline {
     agent any
+    def foo = load('src/de/firma/Utils.groovy')
+    def dockerUtils = load('src/de/firma/DockerUtils.groovy')
 
     stages {
         stage('Test') {
             steps {
                 script {
                     // def utils = load('src/de/firma/Utils.groovy').create(this)
-                    def dockerUtils = load('src/de/firma/DockerUtils.groovy').create(this)
 
-                    def foo = load('src/de/firma/Utils.groovy')
 
                     echo "${foo} -- ${foo.class.name}"
 
@@ -20,8 +20,6 @@ pipeline {
                     foo2.setName("Foo2")
                     foo2.sayHello()
 
-                    // utils.sayHello()
-                    dockerUtils.buildImage()
                 }
             }
         }
